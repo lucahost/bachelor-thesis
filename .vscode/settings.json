@@ -1,0 +1,8 @@
+{
+    "languageTool.enabled": true,
+    "languageTool.language": "de-CH",
+    "languageToolLinter.enabled": true,
+    "languageToolLinter.lintOnSave": true,
+    "ltex.language": "de-CH",
+    "cSpell.enabled": true
+}
