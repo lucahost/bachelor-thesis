@@ -1,4 +1,5 @@
 {
-    "jupyter.debugJustMyCode": false,
-    "commentTranslate.source": "intellsmi.deepl-translate-deepl"
+  "jupyter.debugJustMyCode": false,
+  "commentTranslate.source": "intellsmi.deepl-translate-deepl",
+  "python.analysis.typeCheckingMode": "basic",
 }
