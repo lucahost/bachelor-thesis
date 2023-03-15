@@ -5,7 +5,7 @@ from torch_geometric.nn import GCNConv, global_mean_pool
 
 
 class GCN(torch.nn.Module):
-    def __init__(self, hidden_channels=64, num_node_features=3, num_classes=6):
+    def __init__(self, hidden_channels=64, num_node_features=4, num_classes=7):
         super(GCN, self).__init__()
         torch.manual_seed(12345)
         self.conv1 = GCNConv(num_node_features, hidden_channels)

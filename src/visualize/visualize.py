@@ -21,7 +21,8 @@ class GraphVisualization:
         node_text_font_family: Union[Dict[Vertex, str], Callable, str] = None,
         node_text_font_size: Union[Dict[Vertex, Num], Callable, str] = None,
         node_size: Union[Dict[Vertex, Num], Callable, Num] = None,
-        node_color: Union[Dict[Vertex, Union[str, Num]], Callable, Union[str, Num]] = None,
+        node_color: Union[Dict[Vertex, Union[str, Num]],
+                          Callable, Union[str, Num]] = None,
         node_border_width: Union[Dict[Vertex, Num], Callable, Num] = None,
         node_border_color: Union[Dict[Vertex, str], Callable, str] = None,
         node_opacity: Num = None,
@@ -99,7 +100,8 @@ class GraphVisualization:
                 opacity=self._get_setting('edge_opacity'),
             )
 
-            traces += [go.Scatter3d(z=z, **params) if self.is_3d else go.Scatter(**params)]
+            traces += [go.Scatter3d(z=z, **params)
+                       if self.is_3d else go.Scatter(**params)]
 
         return traces
 
@@ -141,12 +143,14 @@ class GraphVisualization:
             opacity=self._get_setting('node_opacity'),
         )
 
-        trace = go.Scatter3d(z=z, **params) if self.is_3d else go.Scatter(**params)
+        trace = go.Scatter3d(
+            z=z, **params) if self.is_3d else go.Scatter(**params)
         return trace
 
     def _get_setting(self, setting_name, edge=None):
         default_setting = self.default_settings.get(setting_name)
-        def_func = default_setting if callable(default_setting) else lambda x: default_setting
+        def_func = default_setting if callable(
+            default_setting) else lambda x: default_setting
         setting = self.__dict__.get(setting_name)
 
         if edge is None:  # vertex-specific
@@ -218,5 +222,6 @@ class GraphVisualization:
         # create figure
         fig = go.Figure(layout=go.Layout(**layout_params))
         fig.add_traces(self._get_edge_traces())
-        fig.add_trace(self._get_node_trace(showlabel, colorscale, showscale, colorbar_title, reversescale))
+        fig.add_trace(self._get_node_trace(showlabel, colorscale,
+                      showscale, colorbar_title, reversescale))
         return fig
