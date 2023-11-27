@@ -1,4 +1,4 @@
 [submodule "docs"]
 	path = docs
-	url = https://git.overleaf.com/634151e362ae47239f29af23
+	url = https://github.com/lucahost/bachelor-thesis-docs
 	ignore = dirty
